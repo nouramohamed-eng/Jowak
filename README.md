@@ -1,4 +1,7 @@
 # Jowak: Climate & Weather Dashboard 🌍
+## 💻 Project Preview
+
+![Jowak](public/assets/images/preview.png)
 
 Jowak is a sophisticated, real-time weather tracking application that provides users with accurate climate insights. The app is built with a focus on high performance, aesthetic UI/UX, and seamless integration with external data services.
 
