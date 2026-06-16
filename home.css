@@ -44,22 +44,37 @@ body {
     --md-radius-:1.7em;
 
 }
+/*light theme*/
 
+:root{
+    --h-color:rgb(37, 34, 34);
+    --p-svg-color:rgb(126, 130, 131);
+    --bg-color:rgb(240, 245, 254) ;
+    --Light-special-color: rgb(17, 66, 95);
+}
 .light-theme {
     background-color: white !important;
+}
+.light-theme .nav-links li a:hover{
+    color: var(--Light-special-color);
 }
 .light-theme main,
 .light-theme .main-content .container .main-text h2,
 .light-theme .main-content .container .main-text p {
-    color: rgb(37, 34, 34) !important; 
+    color: var(--h-color) !important; 
 }
-
+.light-theme main {
+    background-image: url(./public/assets/images/lightback.jpg);
+}
+.light-theme .container .main-text h5{
+color: var(--Light-special-color);
+}
 .light-theme .weather-card,
 .light-theme .div2,
 .light-theme .div3,
 .light-theme .div4,
 .light-theme .div5 {
-    background-color: rgb(240, 245, 254) !important;
+    background-color: var(--bg-color) !important;
     border: 1px solid #ddd; 
     transition: 0.3s;
 }
@@ -72,12 +87,14 @@ body {
 .light-theme .div2 h2,
 .light-theme .div3 h2,
 .light-theme .div4 h2,
-.light-theme .div5Timline h4 {
-    color: rgb(37, 34, 34) !important;
+.light-theme .div5Timline h4,
+.light-theme .footer-cotnainer h2,
+.light-theme .nav-links li {
+    color: var(--h-color) !important;
 }
 
 .light-theme .parent > div {
-    background-color: rgb(240, 245, 254) !important;
+    background-color: var(--bg-color) !important;
 
     transition: background-color 0.3s ease;
 }
@@ -86,21 +103,109 @@ body {
 .light-theme .parent > div h2,
 .light-theme .parent > div h4,
 .light-theme .parent > div h5 {
-    color: rgb(37, 34, 34) !important;
+    color: var(--h-color) !important;
 }
 
 
 .light-theme .div5 .sunrise h4,
 .light-theme .div5 .sunset h4 {
-    color: rgb(37, 34, 34) !important;
+    color: var(--h-color) !important;
 }
+
+.light-theme .hoursUpdate-Card{
+    background: var(--bg-color);
+}
+
+
+.light-theme .hoursUpdate-Card .card-degree-day span,
+.light-theme .hoursUpdate-Card .card-percentage span,
+.light-theme .hoursUpdate-Card .wind span,
+.light-theme .hoursUpdate-Card .card-time {
+    color: var(--h-color) !important;
+}
+
+.light-theme .hoursUpdate-Card .card-icon svg,
+.light-theme .hoursUpdate-Card .percentage svg,
+.light-theme .hoursUpdate-Card .wind svg,
+.light-theme .web-social svg {
+    stroke: var(--h-color) !important;
+    fill: var(--h-color) !important;
+}
+
+.light-theme .CountriesWeatherparent > div {
+    background-color: var(--bg-color) !important;
+    padding: 15px; 
+    transition: background-color 0.3s ease;
+}
+
+.light-theme .CountriesWeatherparent > div h3 {
+    color: var(--h-color) !important;
+}
+.light-theme .videosCard-container .video-card h2 {
+    color: var(--h-color) !important;
+    transition: color 0.3s ease;
+}
+.light-theme .InputCont {
+    background-color: var(--bg-color) !important;
+    border: 1px solid #ccc; 
+}
+.light-theme .InputCont input {
+    background-color: var(--bg-color) !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(240, 245, 254) inset !important;
+    -webkit-text-fill-color: var(--h-color)!important; 
+}
+.light-theme .HoursUpdate-Text h2,
+.light-theme .weatherDetails-Text h2,
+.light-theme .searchWeather-Text h2,
+.light-theme .CountriesWeather-Text h2,
+.light-theme .ForecastVideos-Text h2{
+    color: var(--h-color);
+}
+
+.light-theme .HoursUpdate-Text p,
+.light-theme .weatherDetails-Text p,
+.light-theme .searchWeather-Text p,
+.light-theme .CountriesWeather-Text p,
+.light-theme .ForecastVideos-Text p,
+.light-theme .footer-cotnainer h4{
+    color: var(--p-svg-color);
+}
+.light-theme .logo svg,
+.light-theme main svg ,
+.light-theme .footer-logo svg
+{
+    stroke: var(--Light-special-color) !important;
+    fill: var(--Light-special-color) !important;
+}
+
+.light-theme .logo::before,
+.light-theme main::before {
+    background-color: var(--Light-special-color) !important;
+}
+.light-theme .hoursUpdate-Card svg,
+.light-theme .weekly-weather-section svg {
+    stroke: var(--grey-special-color-) !important;
+    fill: var(--grey-special-color-) !important;
+}
+.light-theme .container .main-text h5::before{
+    background: var(--Light-special-color);
+}
+.light-theme .NavLinkss .nav-links li a {
+    color: var(--h-color);
+}
+.light-theme .NavLinkss .nav-links li a:hover {
+    color: var(--Light-special-color);
+}
+/* .light-theme .footer-cotnainer{
+    background-color: rgb(2, 2, 2);
+} */
 /* ----------------------------------------------- */
 /* start navbar */
 main{
     background-image: url(./public/assets/images/5065592.jpg);
     background-position: center;
     width: 100%;
-    min-height: 110vh;
+    min-height: 90vh;
     background-size: cover;
     position: relative;
 }
@@ -109,8 +214,8 @@ main{
     align-items: center;
     justify-content: space-between;
     padding: 2.2em;
-    padding-inline: 2.8em;
     background-color: transparent;
+    align-items: center;
 }
 .nav-links{
     display: flex;
@@ -133,16 +238,17 @@ font-weight: lighter
 .logo .wak {
 font-family: "Eagle Lake", serif;
 }
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 .toggle-menue {
     display: none;
     color: white ;
     border: 1px solid var(--main-color-);
     padding: 7px;
     
-}
-.nav-btn {
-    position: absolute;
-    right: 60px;
 }
 
 /* end navbar */
@@ -194,6 +300,7 @@ left: 40px;
     line-height: 1.7;
     max-width: 750px;
 }
+
 /*kk*/ 
 .search-container {
 position: relative;
@@ -328,6 +435,25 @@ transform: scale(1.05);
 .search-input:focus {
 animation: inputPulse 0.5s ease;
 }
+.SearchBar { position: relative; width: 250px; }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown li { padding: 10px; cursor: pointer; }
+.dropdown li:hover { background: #f0f0f0; }
+.show { display: block; }
 .weather-app .card , .weather-card{
     background: rgba(78, 72, 70, 0.281);
     padding: 40px;
@@ -375,15 +501,20 @@ font-size: 1.2em;
 
 /* end main content*/
 /* ---------------------------------------------------------------------- */
-/**/
-/* From Uiverse.io by JkHuger */ 
+/*toggle*/
 /* Default */
-.theme {
-  display: flex;
-  align-items: center;
-  -webkit-tap-highlight-color: transparent;
+.theme-container{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    transform: scale(0.7);
 }
-
+.theme {
+   display: flex;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    transform: scale(0.7);
+}
 .theme__fill,
 .theme__icon {
   transition: 0.3s;
@@ -612,6 +743,7 @@ font-size: 1.2em;
     white-space: nowrap;
     grid-auto-flow: column;
     scrollbar-width: none;
+    margin-top: 20px;
     -ms-overflow-style: none;
 }
 .forecast-container::-webkit-scrollbar {
@@ -1183,11 +1315,11 @@ color: var(--common-text-color-);
     html {
         font-size: 85%; 
     }
-    .main-content .container{
-        flex-direction: column;
-        padding-inline: 30px;
-        align-items: flex-start; 
-        justify-content: flex-start;
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
     }
     
     
@@ -1205,7 +1337,26 @@ font-size: 3em;
 }
 .nav-links {
     display: none;
+    flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 250px;
+        height: 90vh;
+        padding: 20px;
+        gap: 20px;
+        z-index: 1000;
+        transform: translateX(100%); 
+    transition: transform 0.4s ease-in-out;
 }
+.nav-links.open {
+    transform: translateX(0);
+}
+.nav-links.active {
+        display: flex;
+    }
+    
 .cards-box{
     grid-template-columns: repeat(4, 1fr);
 }
