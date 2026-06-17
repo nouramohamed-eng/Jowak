@@ -1,10 +1,12 @@
-[
-  { "id": 1, "name": "Cairo", "country": "Egypt" },
-  { "id": 2, "name": "Paris", "country": "France" },
-  { "id": 3, "name": "London", "country": "United Kingdom" },
-  { "id": 4, "name": "New York", "country": "USA" },
-  { "id": 5, "name": "Dubai", "country": "UAE" },
-  { "id": 6, "name": "Tokyo", "country": "Japan" },
-  { "id": 7, "name": "Berlin", "country": "Germany" },
-  { "id": 8, "name": "Madrid", "country": "Spain" }
-]
+{
+  "cities": [
+    { "id": 1, "name": "Cairo", "country": "Egypt" },
+    { "id": 2, "name": "Paris", "country": "France" },
+    { "id": 3, "name": "London", "country": "United Kingdom" },
+    { "id": 4, "name": "New York", "country": "USA" },
+    { "id": 5, "name": "Dubai", "country": "UAE" },
+    { "id": 6, "name": "Tokyo", "country": "Japan" },
+    { "id": 7, "name": "Berlin", "country": "Germany" },
+    { "id": 8, "name": "Madrid", "country": "Spain" }
+  ]
+}
