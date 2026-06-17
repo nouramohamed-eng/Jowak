@@ -940,6 +940,14 @@ border-radius: var(--sm-radius-);
 .Weather-card h4:hover {
     color: var(--special-color-);
 }
+.bg-italy { background-image: url('/public/assets/images/italy.jpg'); }
+.bg-france { background-image: url('/public/assets/images/france.jpg'); }
+.bg-london { background-image: url('/public/assets/images/london.jpg'); }
+.bg-dubai { background-image: url('/public/assets/images/dubai.jpg'); }
+.bg-canada { background-image: url('/public/assets/images/canda.jpg'); }
+.bg-egypt { background-image: url('/public/assets/images/egypt.jpg'); }
+.bg-japan { background-image: url('/public/assets/images/japan.jpg'); }
+.bg-brazil { background-image: url('/public/assets/images/brazil.avif'); }
 /* end weather search */
 
 /* Start countriesweather */
