@@ -4,9 +4,13 @@ const menuBtn = document.querySelector('.toggle-menue');
 const navLinks = document.querySelector('.nav-links');
 const container = document.querySelector('.cards-box');
 const weatherForcastCont=document.querySelector('#WeeklyForecastContainer');
-const StatesCon = document.querySelector(".weatherCardBox")
+const parent = document.querySelector('.CountriesWeatherparent');
+const forcastvidcont= document.querySelector (".videosCard-container")
+const emailInput=document.querySelector('.emailInput');
+const emailSender=document.querySelector('.sender');
 
 //apis&data
+
 //hoursupdate section data
 const Weatherdata=[
     { 
@@ -127,10 +131,10 @@ const WeeklyData = [
 ];
  //recent states weather
 const RecentSearchData = [
-  { id: 1, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><g id="Rainbow"><g><path d="M3.089,16.71A9,9,0,0,1,8.97,8.326,8.912,8.912,0,0,1,20.911,16.71a.5.5,0,0,0,1,0,10.033,10.033,0,0,0-6.46-9.291,9.981,9.981,0,0,0-11.06,2.944,10.058,10.058,0,0,0-2.3,6.347.5.5,0,0,0,1,0Z"></path><path d="M5.985,16.71A6.078,6.078,0,0,1,12,10.7a6.078,6.078,0,0,1,6.015,6.015.5.5,0,0,0,1,0A7.013,7.013,0,0,0,6.606,12.228,7.151,7.151,0,0,0,4.985,16.71a.5.5,0,0,0,1,0Z"></path><path d="M8.88,16.71a3.12,3.12,0,0,1,6.24,0,.5.5,0,0,0,1,0,4.119,4.119,0,0,0-7.255-2.669A4.219,4.219,0,0,0,7.88,16.71a.5.5,0,0,0,1,0Z"></path></g></g></svg>`, temp: "15°", condition: "Light Rain", city: "Italy", bgClass: "bg-italy" },
-  { id: 2, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><g><path d="M13 4l-1 2.934-1-2.934c-.188-.553.106-1.152.659-1.341.552-.188 1.153.107 1.341.659.078.23.072.469 0 .682zM4 11l2.934 1-2.934 1c-.553.188-1.152-.106-1.341-.659-.188-.552.107-1.153.659-1.341.23-.078.469-.072.682 0zM11 20l1-2.934 1 2.934c.188.553-.106 1.152-.659 1.341-.552.188-1.152-.106-1.341-.659-.078-.23-.072-.469 0-.682zM20 12.998l-2.934-1 2.934-1c.553-.188 1.152.106 1.341.659.188.552-.106 1.152-.659 1.341-.23.078-.469.072-.682 0zM7.05 5.636l1.367 2.781-2.781-1.367c-.524-.257-.74-.891-.483-1.414.258-.523.891-.739 1.414-.482.218.107.383.28.483.482zM5.636 16.949l2.781-1.367-1.367 2.781c-.257.523-.891.739-1.414.482-.523-.258-.739-.891-.482-1.414.107-.218.28-.382.482-.482zM16.949 18.363l-1.367-2.781 2.781 1.367c.523.257.739.891.482 1.414-.258.523-.891.739-1.414.482-.218-.107-.382-.28-.482-.482zM18.362 7.048l-2.782 1.368 1.368-2.782c.257-.523.891-.739 1.414-.482.523.258.739.891.481 1.415-.106.217-.279.381-.481.481zM12 16.5c-2.481 0-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5 4.5 2.019 4.5 4.5-2.019 4.5-4.5 4.5zm0-7c-1.379 0-2.5 1.121-2.5 2.5s1.121 2.5 2.5 2.5 2.5-1.121 2.5-2.5-1.121-2.5-2.5-2.5z"></path></g></svg>`, temp: "22°", condition: "Sunny", city: "France", bgClass: "bg-france" },
-  { id: 3, svg:`<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path><path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path></svg>`,temp: "10°", condition: "Cloudy", city: "London", bgClass: "bg-london" },
-  { id: 4, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M3.95,13.05c0-0.93,0.29-1.75,0.87-2.48s1.31-1.2,2.19-1.4c0.26-1.1,0.82-2,1.7-2.71s1.88-1.06,3.01-1.06
+  { id: 1, svg:`<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="70px" width="70px" xmlns="http://www.w3.org/2000/svg"><g id="Rainbow"><g><path d="M3.089,16.71A9,9,0,0,1,8.97,8.326,8.912,8.912,0,0,1,20.911,16.71a.5.5,0,0,0,1,0,10.033,10.033,0,0,0-6.46-9.291,9.981,9.981,0,0,0-11.06,2.944,10.058,10.058,0,0,0-2.3,6.347.5.5,0,0,0,1,0Z"></path><path d="M5.985,16.71A6.078,6.078,0,0,1,12,10.7a6.078,6.078,0,0,1,6.015,6.015.5.5,0,0,0,1,0A7.013,7.013,0,0,0,6.606,12.228,7.151,7.151,0,0,0,4.985,16.71a.5.5,0,0,0,1,0Z"></path><path d="M8.88,16.71a3.12,3.12,0,0,1,6.24,0,.5.5,0,0,0,1,0,4.119,4.119,0,0,0-7.255-2.669A4.219,4.219,0,0,0,7.88,16.71a.5.5,0,0,0,1,0Z"></path></g></g></svg>`, temp: "15°", condition: "Light Rain", city: "Italy", bgClass: "bg-italy" },
+  { id: 2, svg:`<svg stroke="white" fill="white" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" height="70px" width="70px" xmlns="http://www.w3.org/2000/svg"><g><path d="M13 4l-1 2.934-1-2.934c-.188-.553.106-1.152.659-1.341.552-.188 1.153.107 1.341.659.078.23.072.469 0 .682zM4 11l2.934 1-2.934 1c-.553.188-1.152-.106-1.341-.659-.188-.552.107-1.153.659-1.341.23-.078.469-.072.682 0zM11 20l1-2.934 1 2.934c.188.553-.106 1.152-.659 1.341-.552.188-1.152-.106-1.341-.659-.078-.23-.072-.469 0-.682zM20 12.998l-2.934-1 2.934-1c.553-.188 1.152.106 1.341.659.188.552-.106 1.152-.659 1.341-.23.078-.469.072-.682 0zM7.05 5.636l1.367 2.781-2.781-1.367c-.524-.257-.74-.891-.483-1.414.258-.523.891-.739 1.414-.482.218.107.383.28.483.482zM5.636 16.949l2.781-1.367-1.367 2.781c-.257.523-.891.739-1.414.482-.523-.258-.739-.891-.482-1.414.107-.218.28-.382.482-.482zM16.949 18.363l-1.367-2.781 2.781 1.367c.523.257.739.891.482 1.414-.258.523-.891.739-1.414.482-.218-.107-.382-.28-.482-.482zM18.362 7.048l-2.782 1.368 1.368-2.782c.257-.523.891-.739 1.414-.482.523.258.739.891.481 1.415-.106.217-.279.381-.481.481zM12 16.5c-2.481 0-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5 4.5 2.019 4.5 4.5-2.019 4.5-4.5 4.5zm0-7c-1.379 0-2.5 1.121-2.5 2.5s1.121 2.5 2.5 2.5 2.5-1.121 2.5-2.5-1.121-2.5-2.5-2.5z"></path></g></svg>`, temp: "22°", condition: "Sunny", city: "France", bgClass: "bg-france" },
+  { id: 3, svg:`<svg stroke="white" fill="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="55px" width="55px" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path><path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path></svg>`,temp: "10°", condition: "Cloudy", city: "London", bgClass: "bg-london" },
+  { id: 4, svg:`<svg stroke="white" fill="white" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height="80px" width="80px" xmlns="http://www.w3.org/2000/svg"><path d="M3.95,13.05c0-0.93,0.29-1.75,0.87-2.48s1.31-1.2,2.19-1.4c0.26-1.1,0.82-2,1.7-2.71s1.88-1.06,3.01-1.06
 	c1.1,0,2.08,0.35,2.95,1.04s1.43,1.57,1.68,2.65h0.26c1.1,0,2.04,0.39,2.82,1.16c0.78,0.77,1.17,1.71,1.17,2.81
 	c0,0.01,0,0.02,0,0.04c0,0.02,0,0.04,0,0.06c0.75,0.8,1.12,1.75,1.12,2.85c0,0.76-0.19,1.46-0.57,2.1
 	c-0.38,0.65-0.89,1.16-1.53,1.53c-0.64,0.38-1.34,0.56-2.09,0.56c-0.96,0-1.82-0.3-2.56-0.89s-1.24-1.35-1.48-2.26H7.79
@@ -151,10 +155,10 @@ const RecentSearchData = [
 	c-0.12,0.12-0.28,0.19-0.47,0.19s-0.35-0.06-0.47-0.19C21.32,11.94,21.26,11.78,21.26,11.59z M23.08,15.99
 	c0-0.19,0.06-0.35,0.19-0.48c0.12-0.13,0.28-0.2,0.47-0.2h1.62c0.19,0,0.36,0.07,0.5,0.2s0.21,0.29,0.21,0.48
 	c0,0.19-0.07,0.36-0.21,0.49c-0.14,0.13-0.3,0.2-0.5,0.2h-1.62c-0.19,0-0.34-0.07-0.47-0.2C23.14,16.35,23.08,16.19,23.08,15.99z"></path></svg>`, temp: "28°", condition: "Clear", city: "Dubai", bgClass: "bg-dubai" },
-  { id: 5, svg: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M11.9998 3.29814L14.4451 1.66794L15.5545 3.33204L12.9998 5.03517V10.2678L17.5313 7.65149L17.7289 4.58748L19.7247 4.7162L19.5356 7.64899L22.17 8.95159L21.2836 10.7444L18.5313 9.38354L14.0001 11.9996L18.5317 14.616L21.284 13.2551L22.1704 15.0479L19.536 16.3505L19.7251 19.2833L17.7293 19.412L17.5317 16.348L12.9998 13.7315V18.9648L15.5545 20.6679L14.4451 22.332L11.9998 20.7018L9.55446 22.332L8.44506 20.6679L10.9998 18.9648V13.7319L6.46786 16.3484L6.27026 19.4124L4.2744 19.2836L4.46355 16.3508L1.8291 15.0483L2.71555 13.2554L5.46786 14.6163L10.0001 11.9996L5.46824 9.38319L2.71594 10.7441L1.82948 8.95124L4.46393 7.64864L4.27478 4.71585L6.27064 4.58713L6.46824 7.65113L10.9998 10.2674V5.03517L8.44506 3.33204L9.55446 1.66794L11.9998 3.29814Z"></path></svg>`, temp: "5°", condition: "Snowy", city: "Canada", bgClass: "bg-canada" },
-  { id: 6, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M256 118a22 22 0 0 1-22-22V48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm0 368a22 22 0 0 1-22-22v-48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm113.14-321.14a22 22 0 0 1-15.56-37.55l33.94-33.94a22 22 0 0 1 31.11 31.11l-33.94 33.94a21.93 21.93 0 0 1-15.55 6.44zM108.92 425.08a22 22 0 0 1-15.55-37.56l33.94-33.94a22 22 0 1 1 31.11 31.11l-33.94 33.94a21.94 21.94 0 0 1-15.56 6.45zM464 278h-48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm-368 0H48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm307.08 147.08a21.94 21.94 0 0 1-15.56-6.45l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.55 37.56zM142.86 164.86a21.89 21.89 0 0 1-15.55-6.44l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.56 37.55zM256 358a102 102 0 1 1 102-102 102.12 102.12 0 0 1-102 102z"></path></svg>`, temp: "30°", condition: "Sunny", city: "Egypt", bgClass: "bg-egypt" },
-  { id: 7, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 17H4V15H10.5C12.433 15 14 16.567 14 18.5C14 20.433 12.433 22 10.5 22C8.99957 22 7.71966 21.0559 7.22196 19.7293L9.09513 19.0268C9.30843 19.5954 9.85696 20 10.5 20C11.3284 20 12 19.3284 12 18.5C12 17.6716 11.3284 17 10.5 17ZM5 11H18.5C20.433 11 22 12.567 22 14.5C22 16.433 20.433 18 18.5 18C16.9996 18 15.7197 17.0559 15.222 15.7293L17.0951 15.0268C17.3084 15.5954 17.857 16 18.5 16C19.3284 16 20 15.3284 20 14.5C20 13.6716 19.3284 13 18.5 13H5C3.34315 13 2 11.6569 2 10C2 8.34315 3.34315 7 5 7H13.5C14.3284 7 15 6.32843 15 5.5C15 4.67157 14.3284 4 13.5 4C12.857 4 12.3084 4.40463 12.0951 4.97317L10.222 4.27073C10.7197 2.94414 11.9996 2 13.5 2C15.433 2 17 3.567 17 5.5C17 7.433 15.433 9 13.5 9H5C4.44772 9 4 9.44772 4 10C4 10.5523 4.44772 11 5 11Z"></path></svg>`, temp: "18°", condition: "Windy", city: "Japan", bgClass: "bg-japan" },
-  { id: 8, svg:`<svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M3.1,21.04c0-0.24,0.08-0.45,0.25-0.61s0.38-0.24,0.63-0.24h8.97c0.24,0,0.43,0.08,0.59,0.24c0.16,0.16,0.23,0.36,0.23,0.61
+  { id: 5, svg: `<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M11.9998 3.29814L14.4451 1.66794L15.5545 3.33204L12.9998 5.03517V10.2678L17.5313 7.65149L17.7289 4.58748L19.7247 4.7162L19.5356 7.64899L22.17 8.95159L21.2836 10.7444L18.5313 9.38354L14.0001 11.9996L18.5317 14.616L21.284 13.2551L22.1704 15.0479L19.536 16.3505L19.7251 19.2833L17.7293 19.412L17.5317 16.348L12.9998 13.7315V18.9648L15.5545 20.6679L14.4451 22.332L11.9998 20.7018L9.55446 22.332L8.44506 20.6679L10.9998 18.9648V13.7319L6.46786 16.3484L6.27026 19.4124L4.2744 19.2836L4.46355 16.3508L1.8291 15.0483L2.71555 13.2554L5.46786 14.6163L10.0001 11.9996L5.46824 9.38319L2.71594 10.7441L1.82948 8.95124L4.46393 7.64864L4.27478 4.71585L6.27064 4.58713L6.46824 7.65113L10.9998 10.2674V5.03517L8.44506 3.33204L9.55446 1.66794L11.9998 3.29814Z"></path></svg>`, temp: "5°", condition: "Snowy", city: "Canada", bgClass: "bg-canada" },
+  { id: 6, svg:`<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 512 512" height="70px" width="70px" xmlns="http://www.w3.org/2000/svg"><path d="M256 118a22 22 0 0 1-22-22V48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm0 368a22 22 0 0 1-22-22v-48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm113.14-321.14a22 22 0 0 1-15.56-37.55l33.94-33.94a22 22 0 0 1 31.11 31.11l-33.94 33.94a21.93 21.93 0 0 1-15.55 6.44zM108.92 425.08a22 22 0 0 1-15.55-37.56l33.94-33.94a22 22 0 1 1 31.11 31.11l-33.94 33.94a21.94 21.94 0 0 1-15.56 6.45zM464 278h-48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm-368 0H48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm307.08 147.08a21.94 21.94 0 0 1-15.56-6.45l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.55 37.56zM142.86 164.86a21.89 21.89 0 0 1-15.55-6.44l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.56 37.55zM256 358a102 102 0 1 1 102-102 102.12 102.12 0 0 1-102 102z"></path></svg>`, temp: "30°", condition: "Sunny", city: "Egypt", bgClass: "bg-egypt" },
+  { id: 7, svg:`<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="60px" width="60px" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 17H4V15H10.5C12.433 15 14 16.567 14 18.5C14 20.433 12.433 22 10.5 22C8.99957 22 7.71966 21.0559 7.22196 19.7293L9.09513 19.0268C9.30843 19.5954 9.85696 20 10.5 20C11.3284 20 12 19.3284 12 18.5C12 17.6716 11.3284 17 10.5 17ZM5 11H18.5C20.433 11 22 12.567 22 14.5C22 16.433 20.433 18 18.5 18C16.9996 18 15.7197 17.0559 15.222 15.7293L17.0951 15.0268C17.3084 15.5954 17.857 16 18.5 16C19.3284 16 20 15.3284 20 14.5C20 13.6716 19.3284 13 18.5 13H5C3.34315 13 2 11.6569 2 10C2 8.34315 3.34315 7 5 7H13.5C14.3284 7 15 6.32843 15 5.5C15 4.67157 14.3284 4 13.5 4C12.857 4 12.3084 4.40463 12.0951 4.97317L10.222 4.27073C10.7197 2.94414 11.9996 2 13.5 2C15.433 2 17 3.567 17 5.5C17 7.433 15.433 9 13.5 9H5C4.44772 9 4 9.44772 4 10C4 10.5523 4.44772 11 5 11Z"></path></svg>`, temp: "18°", condition: "Windy", city: "Japan", bgClass: "bg-japan" },
+  { id: 8, svg:`<svg stroke="white" fill="white" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height="70px" width="70px" xmlns="http://www.w3.org/2000/svg"><path d="M3.1,21.04c0-0.24,0.08-0.45,0.25-0.61s0.38-0.24,0.63-0.24h8.97c0.24,0,0.43,0.08,0.59,0.24c0.16,0.16,0.23,0.36,0.23,0.61
 	c0,0.24-0.08,0.44-0.24,0.6c-0.16,0.16-0.35,0.24-0.59,0.24H3.98c-0.25,0-0.46-0.08-0.63-0.24S3.1,21.27,3.1,21.04z M5.73,17.98
 	c0-0.24,0.09-0.44,0.27-0.6c0.14-0.15,0.34-0.23,0.59-0.23h9c0.23,0,0.42,0.08,0.58,0.23s0.23,0.35,0.23,0.59
 	c0,0.24-0.08,0.44-0.23,0.61c-0.15,0.17-0.35,0.25-0.58,0.25h-9c-0.23,0-0.43-0.09-0.6-0.26S5.73,18.21,5.73,17.98z M6.35,15.65
@@ -173,7 +177,27 @@ const RecentSearchData = [
 toggleButton.addEventListener(("click"),()=>{
 document.body.classList.toggle("light-theme")
 })
-
+//global weather data
+const countriesData = [
+    { name: "Spain", img: "./public/assets/images/spainflag.png" },
+    { name: "India", img: "./public/assets/images/indiaflag.png" }, 
+    { name: "Australia", img: "./public/assets/images/australiaflag.png" },
+    { name: "Pakistan", img: "./public/assets/images/pakistanflag.png" },
+    { name: "USA", img: "./public/assets/images/usaflag.png" },
+    { name: "Vietnam", img: "./public/assets/images/vietnamflag.png" },
+    { name: "Poland", img: "./public/assets/images/polandflag.png" },
+    { name: "UK", img: "./public/assets/images/ukflag.png" },
+    { name: "Canada", img: "./public/assets/images/candaflag.png" },
+    { name: "Turkey", img: "./public/assets/images/turkeyflag.png" },
+    { name: "Denmark", img: "./public/assets/images/denmarkflag.png" },
+    { name: "Germany", img: "./public/assets/images/germanyflag.png" }
+];
+//forecast videos data
+const forcastvids = [
+  {img:"./public/assets/images/tree.png" , Title : "The Science Behind Extreme Weather Events", link: "https://youtu.be/eeISzbk9SeE?si=_LuQIBlHEexJD0_o"} ,
+  {img:"./public/assets/images/changeonweather.jpg" , Title : "The Impact of Climate Change on Our Weather" , link: "https://youtu.be/2J-2cGgvvII?si=ZjbMmRvXvehH5WGm"} ,
+  {img:"./public/assets/images/weatherchanges.webp" , Title : "Weather Disasters and How to Stay Safe During Them" , link:"https://youtu.be/H6icWfyMBNk?si=Tx6e7EOzQ81Sr8Ae"} ,
+]
 //dropdown search list
 const locationServices = {
     async fetchAll() {
@@ -340,15 +364,96 @@ function WeaklyCardDisplay(data){
 WeaklyCardDisplay(WeeklyData)
 
 //states weather section data display
-function stateCardsDisplay(data){
-    StatesCon.innerHTML=data.map(item=>`
-        <div class="Weather-card">
+function stateCardsDisplay(data) {
+    const StatesCon = document.getElementById('weatherCardBox');
+    StatesCon.innerHTML = data.map(item => `
+        <div class="Weather-card ${item.bgClass}">
             <div class="weatherSvg">
               ${item.svg}
             </div>
             <h2>${item.condition}</h2>
             <h4>${item.temp}</h4>
             <h2>${item.city}</h2>
-          </div>`).join('')
+        </div>
+    `).join('');
 }
-stateCardsDisplay(RecentSearchData)
+
+stateCardsDisplay(RecentSearchData);
+
+//flagscountries function
+function renderCountries() {
+    parent.innerHTML = countriesData.map(country => `
+        <div class="country-card ${country.name.toLowerCase()}">
+            <div class="country-image">
+                <img src="${country.img}" alt="${country.name}" />
+            </div>
+            <h3>${country.name}</h3>
+        </div>
+    `).join('');
+}
+renderCountries();
+
+//video forcast function
+function forcastrender(){
+forcastvidcont.innerHTML=forcastvids.map(post=>`<div class="video-card">
+            <div class="videoImg">
+              <a
+                href="${post.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="PlaySvg"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="white"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  height="35px"
+                  width="35px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M133 440a35.37 35.37 0 0 1-17.5-4.67c-12-6.8-19.46-20-19.46-34.33V111c0-14.37 7.46-27.53 19.46-34.33a35.13 35.13 0 0 1 35.77.45l247.85 148.36a36 36 0 0 1 0 61l-247.89 148.4A35.5 35.5 0 0 1 133 440z"
+                  ></path>
+                </svg>
+              </a>
+
+              <img
+                src="${post.img}"
+                alt="${post.Title}"
+              />
+            </div>
+            <h2>${post.Title}</h2>
+          </div>`).join('');
+}
+forcastrender();
+
+
+//email settings
+function saveEmail() {
+  const emailInputData = emailInput.value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailInputData) {
+    alert('Please enter your email.');
+    return;
+  }
+
+  if (!emailPattern.test(emailInputData)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  localStorage.setItem('email', emailInputData);
+  console.log(emailInputData);
+  emailInput.value = '';
+}
+
+emailSender.addEventListener('click', saveEmail);
+
+emailInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    saveEmail();
+  }
+});
+

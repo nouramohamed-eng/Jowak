@@ -797,10 +797,14 @@ border-radius: var(--sm-radius-);
 /* end hours update*/
 
 /* start weatherDetails */
+.weatherCards-container {
+    padding-block: 30px 0;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, minmax(70px, 1fr));
     gap: 15px;
 }
     
@@ -813,6 +817,7 @@ border-radius: var(--sm-radius-);
 .weather-card{
     color: white;
     background-color: #000000;
+    height: 100%;
 }
 
 .div2 {
@@ -826,6 +831,7 @@ border-radius: var(--sm-radius-);
     background-color: #000000;
     gap: 20px;
     border-radius: var(--sm-radius-);
+    min-height: 150px;
 }
 .div2 h2 , .div3 h2  , .div4 h2{
     color: var(--common-text-color-);
@@ -842,6 +848,7 @@ border-radius: var(--sm-radius-);
     background-color: #000000;
     gap: 20px;
     border-radius: var(--sm-radius-);
+    min-height: 150px;
 }
 
 .div4 {
@@ -856,6 +863,7 @@ border-radius: var(--sm-radius-);
     background-color: #000000;
     gap: 20px;
     border-radius: var(--sm-radius-);
+    min-height: 190px;
 }
 
 .div5 {
@@ -867,6 +875,7 @@ border-radius: var(--sm-radius-);
     background-color: #000000;
     gap: 20px;
     border-radius: var(--sm-radius-);
+    min-height: 190px;
 }
 
 .div5Sun{
@@ -893,13 +902,11 @@ border-radius: var(--sm-radius-);
 .weatherCardBox{
     display: flex; 
     flex-direction: row;
-    gap: 30px; 
-    overflow-x: auto; 
-    padding-bottom: 20px; 
+    gap: 30px;
     overflow-x: auto;
+    padding-bottom: 20px;
     white-space: nowrap;
     margin-top: 20px;
-    grid-auto-flow: column;
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
@@ -908,8 +915,9 @@ border-radius: var(--sm-radius-);
     display: none;
 }
 .Weather-card{
-    flex: 0 0 250px; 
-    width: 300px;
+    flex: 0 0 clamp(210px, 24vw, 300px);
+    width: clamp(210px, 24vw, 300px);
+    min-height: 280px;
     background-image: 
         linear-gradient(
         to bottom, 
@@ -917,21 +925,21 @@ border-radius: var(--sm-radius-);
         rgba(0, 0, 0, 0.80)
         ),
         url(./public/assets/images/france.jpg);
-    border-radius: var(--sm-radius-);
+    border-radius: var(--md-radius-);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
     background-size: cover;      
-    padding-block: 60px;
+    padding: 45px 20px;
     background-position: center;
 }
 
 .Weather-card h2, 
 .Weather-card h4 {
-    color: white;
-    font-size: 2em;
+    color: rgb(252, 249, 249);
+    font-size: 2.2em;
     font-weight: bolder;
 }
 
@@ -940,14 +948,22 @@ border-radius: var(--sm-radius-);
 .Weather-card h4:hover {
     color: var(--special-color-);
 }
-.bg-italy { background-image: url('/public/assets/images/italy.jpg'); }
-.bg-france { background-image: url('/public/assets/images/france.jpg'); }
-.bg-london { background-image: url('/public/assets/images/london.jpg'); }
-.bg-dubai { background-image: url('/public/assets/images/dubai.jpg'); }
-.bg-canada { background-image: url('/public/assets/images/canda.jpg'); }
-.bg-egypt { background-image: url('/public/assets/images/egypt.jpg'); }
-.bg-japan { background-image: url('/public/assets/images/japan.jpg'); }
-.bg-brazil { background-image: url('/public/assets/images/brazil.avif'); }
+.bg-italy {background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('/public/assets/images/italy.jpg');}
+.bg-france { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('/public/assets/images/france.jpg'); }
+.bg-london { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/london.jpg'); }
+.bg-dubai { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/dubai.jpg'); }
+.bg-canada { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/canda.jpg');}
+.bg-egypt { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/egypt.jpg'); }
+.bg-japan { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/japan.jpg'); }
+.bg-brazil { background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('/public/assets/images/brazil.avif'); }
 /* end weather search */
 
 /* Start countriesweather */
@@ -955,111 +971,42 @@ border-radius: var(--sm-radius-);
 .CountriesWeatherparent {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, auto); 
-    gap: 15px; 
+    gap: 20px;
     margin-top: 30px;
+    padding: 10px;
 }
-
-    
-.spain {
-    grid-row: span 2 / span 2;
-}
-
-.india  {
-    grid-row: span 2 / span 2;
-    grid-column-start: 1;
-    grid-row-start: 3;
-    border-radius: var(--sm-radius-);
-    background-color: #000000;
-    width: fit-content;
-    padding-block: 20px;
-    padding-inline: 30px;
+.country-card {
     display: flex;
-    align-items: center;
-    justify-content:center ;
-    gap: 15px;
     flex-direction: column;
-}
-.india, .spain, .australis, .pakistan, .usa, .vietnam, .poland, .uk, .canada, .turkey, .denmark, .germany {
-    border-radius: var(--sm-radius-);
-    background-color: #000000;
-    width: 100%;
-    box-sizing: border-box; 
-    padding-block: 25px;   
-    padding-inline: 5px;  
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    flex-direction: column;
+    background-color: #000000cb; 
+    border-radius: 12px;
+    padding: 12px;
+    /* aspect-ratio: 1 / 1.2; */
+    /* height: 180px;  */
 }
-.india-image{
-width: 50px;
-height: 40px;
+.country-image {
+    width: 100%;      
+    max-width: 150px; 
+    height: 100px; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 8px;
 }
-.india h3 ,.spain h3,.australis h3,.pakistan h3,.usa h3,.vietnam h3,.poland h3,.uk h3,.canada h3,.turkey h3,.denmark h3,.germany h3 {
-    color: white;
-    font-weight: bolder;
-    font-size: 1em
+.country-image img {
+    object-fit: contain;
 }
-.australis {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 1;
-}
-
-.pakistan {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 3;
-}
-
-.usa {
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 1;
+.country-card h3{
+    color: var(--common-text-color-);
+    font-weight: bold;
+    font-size: 1.4vw;
 }
 
-.vietnam {
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 3;
-}
 
-.poland {
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 1;
-}
-
-.uk {
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 3;
-}
-
-.canada{
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-    grid-row-start: 1;
-}
-
-.turkey {
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-    grid-row-start: 3;
-}
-
-.denmark {
-    grid-row: span 2 / span 2;
-    grid-column-start: 6;
-    grid-row-start: 1;
-}
-
-.germany {
-    grid-row: span 2 / span 2;
-    grid-row-start: 3;
-}
         
 /* end countriesweather */
 /*start video card*/
@@ -1072,7 +1019,7 @@ height: 40px;
 .video-card{
     padding: 20px;
     padding-block: 30px;
-    background: linear-gradient(to bottom, #ebf1f5 0%, #a1aab3 50%, #2b2e30 100%);
+    background: linear-gradient(to bottom, #ebf1f581 10%, #a1aab380 70%, #000000a8 100%);
     border-radius: var(--md-radius-);
     display: flex;
     flex-direction: column;
@@ -1208,7 +1155,6 @@ color: var(--common-text-color-);
         padding: 10px;
     }
     
-    
 .weather-app .card .wheather-details h2{
 font-size: 3em;
 }
@@ -1266,6 +1212,15 @@ color: var(--h-color);
 .cards-box{
     grid-template-columns: repeat(4, 1fr);
 }
+.weatherCardBox {
+    gap: 22px;
+}
+.Weather-card {
+    flex-basis: clamp(190px, 32vw, 260px);
+    width: clamp(190px, 32vw, 260px);
+    min-height: 250px;
+    padding: 35px 16px;
+}
 }
 .light-theme .NavLinkss .nav-links li a{
     display: flex;
@@ -1279,12 +1234,28 @@ color: var(--h-color);
 
 }
 
+
+
 @media screen and (max-width: 624px) {
     html {
         font-size: 75%; 
     }
     .cards-box{
     grid-template-columns: repeat(4, 1fr);
+}
+.weatherCardBox {
+    gap: 18px;
+}
+.Weather-card {
+    flex-basis: clamp(170px, 42vw, 230px);
+    width: clamp(170px, 42vw, 230px);
+    min-height: 220px;
+    gap: 25px;
+    padding: 28px 14px;
+}
+.Weather-card h2,
+.Weather-card h4 {
+    font-size: 1.8em;
 }
 
 }
@@ -1299,24 +1270,50 @@ color: var(--h-color);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 
 }
-.parent {
-        
-        grid-template-columns: 1fr;
-        
-        grid-template-rows: auto; 
-    }
-    .div1, .div2, .div3, .div4, .div5 {
-        grid-column: 1 / -1; 
-        grid-row: auto;      
-        grid-column-start: auto;
-        grid-row-start: auto;    
-    }
-    .CountriesWeatherparent {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+.weatherCardBox {
+    gap: 15px;
 }
-.Weather-card{
-    width: 250px;}
+.Weather-card {
+    flex-basis: clamp(155px, 42vw, 210px);
+    width: clamp(155px, 42vw, 210px);
+    min-height: 200px;
+    gap: 20px;
+    padding: 24px 12px;
+}
+.Weather-card h2,
+.Weather-card h4 {
+    font-size: 1.6em;
+}
+.Weather-card svg {
+    width: 48px;
+    height: 48px;
+}
+.parent {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(90px, auto));
+}
+.div1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 4;
+}
+.div2 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+}
+.div3 {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+}
+.div4 {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 2;
+}
+.div5 {
+    grid-column: 3 / span 2;
+    grid-row: 5 / span 2;
+}
+
+
 .india, .spain, .australis, .pakistan, .usa, .vietnam, 
     .poland, .uk, .canada, .turkey, .denmark, .germany {
         grid-column-start: auto !important;
@@ -1324,6 +1321,22 @@ color: var(--h-color);
         grid-column: span 1 !important;
         grid-row: span 1 !important;    
         width: 100%;
+    }
+}
+@media screen and (max-width:624px) {
+.weatherCardBox {
+    gap: 18px;
+}
+.Weather-card {
+    flex-basis: clamp(170px, 42vw, 230px);
+    width: clamp(170px, 42vw, 230px);
+    min-height: 220px;
+    gap: 25px;
+    padding: 28px 14px;
+    }
+    .Weather-card h2,
+    .Weather-card h4 {
+        font-size: 1.8em;
     }
 }
 @media screen and (max-width:544px) {
@@ -1340,4 +1353,79 @@ color: var(--h-color);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 
 }
+.weatherCardBox {
+    gap: 12px;
+}
+.Weather-card {
+    flex-basis: clamp(135px, 44vw, 180px);
+    width: clamp(135px, 44vw, 180px);
+    min-height: 165px;
+    gap: 14px;
+    padding: 18px 8px;
+    border-radius: var(--sm-radius-);
+}
+.Weather-card h2,
+.Weather-card h4 {
+    font-size: 1.35em;
+    text-align: center;
+}
+.Weather-card svg {
+    width: 38px;
+    height: 38px;
+}
+.parent {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+}
+.div1 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+}
+.div2 {
+    grid-column: 1 / span 1;
+    grid-row: auto;
+}
+.div3 {
+    grid-column: 2 / span 1;
+    grid-row: auto;
+}
+.div4 {
+    grid-column: 1 / span 1;
+    grid-row: auto;
+}
+.div5 {
+    grid-column: 2 / span 1;
+    grid-row: auto;
+}
+.div2,
+.div3,
+.div4,
+.div5 {
+    grid-column-start: auto;
+    grid-row-start: auto;
+    min-height: 150px;
+    padding: 12px;
+}
+.div2 h2,
+.div3 h2,
+.div4 h2 {
+    font-size: 1.25em;
+    text-align: center;
+}
+.div2 svg,
+.div3 svg,
+.div4 svg {
+    width: 42px;
+    height: 42px;
+}
+.chart-image img {
+    width: 100%;
+}
+.div5Timline {
+    padding-inline: 10px;
+}
+.country-image {
+        max-width: 100px; 
+        height: 70px;
+    }
 }
