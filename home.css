@@ -179,7 +179,7 @@ color: var(--Light-special-color);
 .light-theme .container .main-text h5::before{
     background: var(--Light-special-color);
 }
-.light-theme footer .NavLinkss .nav-links li a{
+.light-theme footer , .NavLinkss .nav-links li a{
     color: var(--h-color);
 }
 /* .light-theme .footer-cotnainer{
@@ -237,6 +237,9 @@ font-family: "Eagle Lake", serif;
     
 }
 
+.logo{
+    cursor:pointer
+}
 /* end navbar */
 /* -------------------------------------------------------------------------- */
 /* start main content*/
@@ -426,6 +429,8 @@ animation: inputPulse 0.5s ease;
 .dropdown {
   display: none;
   position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
   width: 100%;
   border: 1px solid #ccc;
   background: white;

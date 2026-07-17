@@ -8,7 +8,7 @@ const parent = document.querySelector('.CountriesWeatherparent');
 const forcastvidcont= document.querySelector (".videosCard-container")
 const emailInput=document.querySelector('.emailInput');
 const emailSender=document.querySelector('.sender');
-
+const JowakLogo = document.querySelector(".logo")
 //apis&data
 
 //hoursupdate section data
@@ -202,9 +202,10 @@ const forcastvids = [
 const locationServices = {
     async fetchAll() {
         try {
-            const res = await fetch("/js/HomeData.json");
+            const res = await fetch("./js/HomeData.json");
             if (!res.ok) throw new Error("Failed load countries"); 
-            return await res.json();
+            const data = await res.json();
+            return data.cities;
         } catch (error) {
             console.error(error);
             return [];
@@ -217,6 +218,8 @@ const SearchController = {
     dropdown: document.getElementById('dropdownList'),
 
     async init() {
+        if (!this.input || !this.dropdown) return;
+
         const data = await locationServices.fetchAll();
         this.render(data);
         this.attachEvents(); 
@@ -311,7 +314,7 @@ container.innerHTML=data.map(item=>`<div class="hoursUpdate-Card">
             <div class="card-time">Now</div>
           </div>`).join('');
 }
-renderWeathercard(Weatherdata)
+
 
 //Weather Forcast section data display
 function WeaklyCardDisplay(data){
@@ -361,7 +364,7 @@ function WeaklyCardDisplay(data){
             <div class="card-time">${item.day}</div>
           </div>`).join('');
 }
-WeaklyCardDisplay(WeeklyData)
+
 
 //states weather section data display
 function stateCardsDisplay(data) {
@@ -378,7 +381,7 @@ function stateCardsDisplay(data) {
     `).join('');
 }
 
-stateCardsDisplay(RecentSearchData);
+
 
 //flagscountries function
 function renderCountries() {
@@ -426,7 +429,7 @@ forcastvidcont.innerHTML=forcastvids.map(post=>`<div class="video-card">
             <h2>${post.Title}</h2>
           </div>`).join('');
 }
-forcastrender();
+
 
 
 //email settings
@@ -454,6 +457,17 @@ emailSender.addEventListener('click', saveEmail);
 emailInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     saveEmail();
-  }
+ }
 });
+//jowak logo 
+function jowakclick() {
+    window.location.href = 'home.html';
+}
+JowakLogo.addEventListener('click', jowakclick);
 
+
+
+renderWeathercard(Weatherdata)
+WeaklyCardDisplay(WeeklyData)
+stateCardsDisplay(RecentSearchData);
+forcastrender();
