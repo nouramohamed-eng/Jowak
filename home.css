@@ -59,6 +59,14 @@ body {
 .light-theme .nav-links li a:hover{
     color: var(--Light-special-color);
 }
+.light-theme .navbar .nav-links li a {
+    color: var(--h-color);
+}
+.light-theme .navbar .nav-links li a:hover,
+.light-theme .navbar .nav-links li a:active,
+.light-theme .navbar .nav-links li a:focus-visible {
+    color: var(--Light-special-color);
+}
 .light-theme main,
 .light-theme .main-content .container .main-text h2,
 .light-theme .main-content .container .main-text p {
@@ -179,7 +187,8 @@ color: var(--Light-special-color);
 .light-theme .container .main-text h5::before{
     background: var(--Light-special-color);
 }
-.light-theme footer , .NavLinkss .nav-links li a{
+.light-theme footer,
+.light-theme .NavLinkss .nav-links li a {
     color: var(--h-color);
 }
 /* .light-theme .footer-cotnainer{
@@ -215,6 +224,18 @@ font-weight: 500;
 transition: .2s;
 }
 .nav-links li a:hover{
+    color: var(--special-color-);
+}
+.nav-links li a:active,
+.nav-links li a:focus-visible {
+    color: var(--Light-special-color);
+}
+footer .NavLinkss .nav-links li a {
+    color: var(--common-text-color-);
+}
+footer .NavLinkss .nav-links li a:hover,
+footer .NavLinkss .nav-links li a:active,
+footer .NavLinkss .nav-links li a:focus-visible {
     color: var(--special-color-);
 }
 .logo .bolt ,.w{

@@ -5,18 +5,6 @@ const toggleButton = document.querySelector(".toggle-button");
 const JowakLogo = document.querySelector(".logo")
 const cardscont =document.querySelector(".Cardscontainer")
 
-//apis&data
-const weatherNews = [
-  {Title : "Rain or Shine: Australia's Weather Outloolk", bgClass:"nineth", Author:"Sarah Jenkins", Date:"15 May 2023"} ,
-  {Title : "UK Weather Update: Latest Forecasts and Warnings" ,bgClass: "first",Author:"Mark Thompson", Date:"22 June 2023"} ,
-  {Title : "India's Monsoon Madness: Latest Weather Updates" , bgClass: "second",Author:"Elena Rodriguez", Date:"08 July 2023"} ,
-  { Title : "The Science Behind Extreme Weather Events" , bgClass: "third",Author:"David Chen", Date:"19 August 2023"} ,
-  {Title : "The Impact of Climate Change on Our Weather" ,bgClass: "fourth",Author:"Amina Mansour", Date:"03 September 2023"} ,
-  {Title : "Weather Disasters and How to Stay Safe During Them" ,  bgClass: "fifth",Author:"James O'Connor", Date:"12 October 2023"} ,
-  {Title : "Beyond the Stars: Discovering the Mysteries of Deep Space"  , bgClass: "sixth",Author:"Sofia Rossi", Date:"27 November 2023"} ,
-  {Title : "A Guide to Stargazing: Tips for Enjoying the Night Sky" ,  bgClass: "seventh",Author:"Liam Peterson", Date:"05 December 2023"} ,
-  {Title : "The Latest Discoveries in Space Exploration and Astronomy" ,  bgClass: "eighth",Author:"Chloe Bennett", Date:"14 January 2024"} ,
-]
 //dark-light theme button
 toggleButton.addEventListener(("click"),()=>{
 document.body.classList.toggle("light-theme")
@@ -43,7 +31,7 @@ document.addEventListener('click', (e) => {
 
 //weathernews cards
 function renderWeatherCards(weatherNews){
-    cardscont.innerHTML=weatherNews.map((card)=>`<div class="Newscard ${card.bgClass}">
+    cardscont.innerHTML=weatherNews.map((card)=>`<a href="article.html?id=${card.id}" class="Newscard ${card.bgClass}">
         <div class="card-content">
             <h2>${card.Title}</h2>
             <div class="card-ads">
@@ -58,7 +46,7 @@ function renderWeatherCards(weatherNews){
             </div>
 
         </div>
-    </div>`).join("");
+     </a>`).join("");
 }
 
 renderWeatherCards(weatherNews)
