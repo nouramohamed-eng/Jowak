@@ -258,3 +258,33 @@ const weatherNews = [
     content: "Space exploration continues to advance at a remarkable pace, with recent missions uncovering groundbreaking discoveries about our solar system and beyond. Robotic rovers exploring Mars have provided new evidence about the planet's ancient water systems, fueling excitement about the potential for past microbial life. Meanwhile, powerful space telescopes have captured stunning images of distant galaxies, offering fresh insights into the early formation of the universe. Private space companies are also playing an increasingly significant role, developing reusable rockets that promise to make space travel more affordable and frequent. Scientists are closely monitoring newly identified exoplanets that show promising signs of habitability. International collaboration remains key to tackling the immense challenges of deep space missions. Upcoming lunar and Mars missions aim to pave the way for future human exploration. Stay up to date with the latest advancements in space exploration and astronomy, and what they mean for our growing understanding of the universe and our place within it."
   },
 ]
+
+const videosNews= [
+  {
+    id:1, Title:"Rain or Shine: Australia's Weather Outlook" , img:"./public/assets/images/vid1.png",link:"https://youtu.be/6zGGPsJ_moo?si=9QEvoHY0cMSwjXY2"
+  },
+{
+    id:2, Title:"UK Weather Update: Latest Forecasts and Warnings" , img:"./public/assets/images/vid2.png",link:"https://youtu.be/6VCc-GM_weE?si=07AwDA983Cpo7CA9"
+  },
+  {
+    id:3, Title:"India's Monsoon Madness: Latest Weather Updates" , img:"./public/assets/images/vid3.png",link:"https://youtu.be/xoITQFvp57I?si=y4psrb7HSGQnBHKn"
+  },
+  {
+    id:4, Title:"USA Climate Watch: Extreme Heat and Storm Warnings" , img:"./public/assets/images/vid4.jpg",link:"https://youtu.be/C7B_9Dj45No?si=nq3EvMjj1DFCMSy8"
+  },
+  {
+    id:5, Title:"Japan Typhoon Alert: Latest Tracking and Safety Guidelines" , img:"./public/assets/images/vid5.jpg",link:"https://youtu.be/l5do1Gt4QQw?si=NtzRc97jo68rL8w8"
+  },
+  {
+    id:6, Title:"Dubai Weather Report: Temperature Surges and Humidity Forecast" , img:"./public/assets/images/vid6.jpg",link:"https://youtu.be/Lp6YlzOPr1U?si=TJG9Li9TI-Doux_5"
+  },
+  {
+    id:7, Title:"Brazil Weather Update: Heavy Rains and Flood Advisories" , img:"./public/assets/images/vid7.jpg",link:"https://youtu.be/l5BTBM6XM3c?si=lZnWnwRNbOvnYUAN"
+  },
+  {
+    id:8, Title:"Cairo Heatwave Update: High Temperatures and Dust Storm Warnings" , img:"./public/assets/images/vid8.jpg",link:"https://youtu.be/2xMBUchP_kQ?si=-7SycOhWq2bYOVYK"
+  },
+{
+    id:9, Title:"Rome Climate Report: Sunny Skies and Weekly Weather Outlook" , img:"./public/assets/images/vid9.jpg",link:"https://youtu.be/cMlMYGY0jhg?si=1b7c7loTogitHexY"
+  },
+]
