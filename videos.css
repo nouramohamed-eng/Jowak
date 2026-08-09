@@ -440,7 +440,48 @@ border-radius: var(--md-radius-);
     font-size: 1.3em;
 }
 /*end weather news*/
-
+/*footer start*/
+.footer-cotnainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 100px;
+gap: 30px;
+text-align: center;
+}
+.footer-logo{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.footer-logo h2{
+    font-size: 2.3em;
+    color: var(--common-text-color-);
+}
+.footer-cotnainer h4 {
+font-size: .9em;
+max-width: 550px;
+color: var(--common-text-color-);
+}
+.web-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.web-social svg {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    transition-duration: .2s;
+}
+.web-social svg:hover{
+    background-color: #000000;
+    cursor: pointer;
+}
+/*footer end*/
 
 
 
@@ -540,5 +581,20 @@ color: var(--h-color);
 @media screen and (max-width:544px) {
     html {
         font-size: 55%; 
+    }
+}
+
+@media screen and (max-width: 923px) {
+    footer .NavLinkss .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+        transform: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
