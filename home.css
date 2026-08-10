@@ -952,8 +952,8 @@ border-radius: var(--sm-radius-);
 }
 .Weather-card{
     flex: 0 0 clamp(210px, 24vw, 300px);
-    width: clamp(210px, 24vw, 300px);
-    min-height: 280px;
+    width: clamp(200px, 24vw, 200px);
+    min-height: 260px;
     background-image: 
         linear-gradient(
         to bottom, 
@@ -968,7 +968,7 @@ border-radius: var(--sm-radius-);
     justify-content: center;
     gap: 40px;
     background-size: cover;      
-    padding: 45px 20px;
+    padding: 40px 20px;
     background-position: center;
 }
 
