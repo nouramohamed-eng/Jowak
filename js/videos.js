@@ -1,15 +1,9 @@
 //selectors
 const menuBtn = document.querySelector('.toggle-menue');
 const navLinks = document.querySelector('.nav-links');
-const toggleButton = document.querySelector(".toggle-button");
 const JowakLogo = document.querySelector(".logo")
 const cardscont =document.querySelector(".Cardscontainer")
 const forcastvidcont= document.querySelector (".videosCard-container")
-
-//dark-light theme button
-toggleButton.addEventListener(("click"),()=>{
-document.body.classList.toggle("light-theme")
-})
 
 //jowak logo 
 function jowakclick() {
@@ -60,6 +54,8 @@ forcastvidcont.innerHTML = videos.map(post=>`<div class="video-card">
               <img
                 src="${post.img}"
                 alt="${post.Title}"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h2>${post.Title}</h2>

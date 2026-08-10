@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="maps.css">
+    <script src="./js/theme.js"></script>
+    <script src="./js/active-nav.js" defer></script>
+    <script src="./js/lazy-media.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
       rel="stylesheet"
@@ -41,9 +44,9 @@
 
           
           <ul class="nav-links">
-            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="home.html" >Home</a></li>
             <li><a href="News.html">News</a></li>
-            <li><a href="maps.html" class="active">Map</a></li>
+            <li><a href="maps.html" >Map</a></li>
             <li><a href="videos.html">Videos</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -92,14 +95,14 @@
     </main>
 <section class="clouds">
          <div class="cloudsCont">
-            <video autoplay muted loop playsinline class="video-bg">
-                <source src="./public/assets/videos/Recording 2026-08-10 195921.mp4"type="video/mp4">
+            <video autoplay muted loop playsinline class="video-bg" preload="none" data-lazy-video>
+                <source data-src="./public/assets/videos/Recording 2026-08-10 195921.mp4" type="video/mp4">
             </video>
             <h1>Weather Map</h1>
          </div>
     </section>
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d256531.24446961994!2d-100.6443535711444!3d25.72188153130429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629531b437f8f5%3A0xa3d3d3ca6ac89894!2sMonterrey%2C%20Nuevo%20Leon%2C%20Mexico!5e0!3m2!1sen!2seg!4v1786056083442!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d256531.24446961994!2d-100.6443535711444!3d25.72188153130429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629531b437f8f5%3A0xa3d3d3ca6ac89894!2sMonterrey%2C%20Nuevo%20Leon%2C%20Mexico!5e0!3m2!1sen!2seg!4v1786056083442!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
 <section class="weather-maps-section">
   <div class="maps-grid-container">
@@ -107,21 +110,21 @@
     
     <div class="map-card-wrapper">
       <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3151975.0592984185!2d-95.712891!3d37.09024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3151975.0592984185!2d-95.712891!3d37.09024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" ></iframe>
       </div>
       <h3 class="map-title">North America Map</h3>
     </div>
 
     <div class="map-card-wrapper">
       <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5138127.147254552!2d10.451526!3d51.165691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5138127.147254552!2d10.451526!3d51.165691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" ></iframe>
       </div>
       <h3 class="map-title">Europe Map</h3>
     </div>
 
     <div class="map-card-wrapper">
       <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7159781.37890664!2d45.079162!3d23.885942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7159781.37890664!2d45.079162!3d23.885942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" ></iframe>
       </div>
       <h3 class="map-title">Middle East Map</h3>
     </div>
@@ -144,7 +147,7 @@ information for users.</h4>
 </div>
 <div class="NavLinkss">
   <ul class="nav-links">
-            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="News.html">News</a></li>
             <li><a href="maps.html">Map</a></li>
             <li><a href="videos.html">Videos</a></li>

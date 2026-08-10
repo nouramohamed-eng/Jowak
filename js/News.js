@@ -1,14 +1,8 @@
 //selectors
 const menuBtn = document.querySelector('.toggle-menue');
 const navLinks = document.querySelector('.nav-links');
-const toggleButton = document.querySelector(".toggle-button");
 const JowakLogo = document.querySelector(".logo")
 const cardscont =document.querySelector(".Cardscontainer")
-
-//dark-light theme button
-toggleButton.addEventListener(("click"),()=>{
-document.body.classList.toggle("light-theme")
-})
 
 //jowak logo 
 function jowakclick() {

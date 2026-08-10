@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact.css">
+    <script src="./js/theme.js"></script>
+    <script src="./js/active-nav.js" defer></script>
+    <script src="./js/lazy-media.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
       rel="stylesheet"
@@ -40,7 +43,7 @@
 
           
           <ul class="nav-links">
-            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="News.html">News</a></li>
             <li><a href="maps.html" class="active">Map</a></li>
             <li><a href="videos.html">Videos</a></li>
@@ -91,8 +94,8 @@
     </main>
     <section class="clouds">
          <div class="cloudsCont">
-            <video autoplay muted loop playsinline class="video-bg">
-                <source src="./public/assets/videos/Recording 2026-08-10 195921.mp4"type="video/mp4">
+            <video autoplay muted loop playsinline class="video-bg" preload="none" data-lazy-video>
+                <source data-src="./public/assets/videos/Recording 2026-08-10 195921.mp4" type="video/mp4">
             </video>
             <h1>Contact Us</h1>
          </div>
@@ -129,7 +132,7 @@ information for users.</h4>
 </div>
 <div class="NavLinkss">
   <ul class="nav-links">
-            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="home.html" >Home</a></li>
             <li><a href="News.html">News</a></li>
             <li><a href="maps.html">Map</a></li>
             <li><a href="videos.html">Videos</a></li>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="weather.css" />
+    <script src="./js/theme.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Details</title>
+  </head>
+  <body>
+    <main class="weather-page">
+      <header class="weather-header">
+        <a class="back-link" href="home.html">Back to home</a>
+        <button class="toggle-button" type="button" aria-label="Toggle color theme">
+          <span></span>
+        </button>
+      </header>
+      <section id="weatherDetails" class="weather-details" aria-live="polite">
+        <p>Loading weather data...</p>
+      </section>
+    </main>
+    <script src="./js/weather.js"></script>
+  </body>
+</html>

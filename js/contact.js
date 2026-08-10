@@ -1,7 +1,6 @@
 //selectors
 const menuBtn = document.querySelector('.toggle-menue');
 const navLinks = document.querySelector('.nav-links');
-const toggleButton = document.querySelector(".toggle-button");
 const JowakLogo = document.querySelector(".logo")
 const NameInp =document.querySelector(".nameInp")
 const EmailInp = document.querySelector(".emailInp")
@@ -10,11 +9,6 @@ const SubInp = document.querySelector(".SubInp")
 const MessInp=document.querySelector(".MessageInp")
 const SendBtn = document.querySelector(".SendBtn")
 const form = document.querySelector(".form")
-//dark-light theme button
-toggleButton.addEventListener(("click"),()=>{
-document.body.classList.toggle("light-theme")
-})
-
 //jowak logo 
 function jowakclick() {
     window.location.href = 'home.html';
@@ -33,6 +27,7 @@ document.addEventListener('click', (e) => {
             }
         });
 } 
+
 
 //form validation
 SendBtn.addEventListener("click", function(e){

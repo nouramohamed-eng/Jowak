@@ -1,5 +1,4 @@
 //selectors
-const toggleButton = document.querySelector(".toggle-button");
 const menuBtn = document.querySelector('.toggle-menue');
 const navLinks = document.querySelector('.nav-links');
 const container = document.querySelector('.cards-box');
@@ -9,12 +8,6 @@ const forcastvidcont= document.querySelector (".videosCard-container")
 const emailInput=document.querySelector('.emailInput');
 const emailSender=document.querySelector('.sender');
 const JowakLogo = document.querySelector(".logo")
-
-//dark-light theme button
-toggleButton.addEventListener(("click"),()=>{
-document.body.classList.toggle("light-theme")
-})
-
 
 //dropdown search list
 const locationServices = {
@@ -51,6 +44,7 @@ const SearchController = {
             li.onclick = () => {
                 this.input.value = item.name;
                 this.dropdown.classList.remove("show");
+                window.location.href = `weather.html?cityId=${item.id}`;
             };
             fragment.appendChild(li);
         });
@@ -206,7 +200,7 @@ function renderCountries() {
     parent.innerHTML = countriesData.map(country => `
         <div class="country-card ${country.name.toLowerCase()}">
             <div class="country-image">
-                <img src="${country.img}" alt="${country.name}" />
+                <img src="${country.img}" alt="${country.name}" loading="lazy" decoding="async" />
             </div>
             <h3>${country.name}</h3>
         </div>
@@ -242,6 +236,8 @@ forcastvidcont.innerHTML=forcastvids.map(post=>`<div class="video-card">
               <img
                 src="${post.img}"
                 alt="${post.Title}"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h2>${post.Title}</h2>

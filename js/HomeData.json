@@ -7,7 +7,31 @@
     { "id": 5, "name": "Dubai", "country": "UAE" },
     { "id": 6, "name": "Tokyo", "country": "Japan" },
     { "id": 7, "name": "Berlin", "country": "Germany" },
-    { "id": 8, "name": "Madrid", "country": "Spain" }
+    { "id": 8, "name": "Madrid", "country": "Spain" },
+    { "id": 9, "name": "Rome", "country": "Italy" },
+    { "id": 10, "name": "Sydney", "country": "Australia" },
+    { "id": 11, "name": "Toronto", "country": "Canada" },
+    { "id": 12, "name": "Istanbul", "country": "Turkey" },
+    { "id": 13, "name": "Amsterdam", "country": "Netherlands" },
+    { "id": 14, "name": "Barcelona", "country": "Spain" },
+    { "id": 15, "name": "Singapore", "country": "Singapore" }
+  ],
+  "weatherData": [
+    { "cityId": 1, "cityName": "Cairo", "temperature": "32°C", "condition": "Sunny", "humidity": "40%", "wind": "15 km/h" },
+    { "cityId": 2, "cityName": "Paris", "temperature": "18°C", "condition": "Rainy", "humidity": "75%", "wind": "22 km/h" },
+    { "cityId": 3, "cityName": "London", "temperature": "15°C", "condition": "Cloudy", "humidity": "80%", "wind": "25 km/h" },
+    { "cityId": 4, "cityName": "New York", "temperature": "22°C", "condition": "Partly Cloudy", "humidity": "60%", "wind": "18 km/h" },
+    { "cityId": 5, "cityName": "Dubai", "temperature": "38°C", "condition": "Sunny", "humidity": "45%", "wind": "12 km/h" },
+    { "cityId": 6, "cityName": "Tokyo", "temperature": "20°C", "condition": "Clear", "humidity": "55%", "wind": "14 km/h" },
+    { "cityId": 7, "cityName": "Berlin", "temperature": "16°C", "condition": "Cloudy", "humidity": "70%", "wind": "20 km/h" },
+    { "cityId": 8, "cityName": "Madrid", "temperature": "28°C", "condition": "Sunny", "humidity": "35%", "wind": "16 km/h" },
+    { "cityId": 9, "cityName": "Rome", "temperature": "26°C", "condition": "Sunny", "humidity": "50%", "wind": "10 km/h" },
+    { "cityId": 10, "cityName": "Sydney", "temperature": "24°C", "condition": "Clear", "humidity": "65%", "wind": "19 km/h" },
+    { "cityId": 11, "cityName": "Toronto", "temperature": "12°C", "condition": "Snowy", "humidity": "85%", "wind": "30 km/h" },
+    { "cityId": 12, "cityName": "Istanbul", "temperature": "21°C", "condition": "Windy", "humidity": "68%", "wind": "28 km/h" },
+    { "cityId": 13, "cityName": "Amsterdam", "temperature": "14°C", "condition": "Rainy", "humidity": "82%", "wind": "24 km/h" },
+    { "cityId": 14, "cityName": "Barcelona", "temperature": "27°C", "condition": "Sunny", "humidity": "55%", "wind": "15 km/h" },
+    { "cityId": 15, "cityName": "Singapore", "temperature": "30°C", "condition": "Thunderstorm", "humidity": "90%", "wind": "20 km/h" }
   ]
 }
 
