@@ -985,21 +985,21 @@ border-radius: var(--sm-radius-);
     color: var(--special-color-);
 }
 .bg-italy {background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url('/public/assets/images/italy.jpg');}
+                      url('./public/assets/images/italy.jpg');}
 .bg-france { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url('/public/assets/images/france.jpg'); }
+                      url('./public/assets/images/france.jpg'); }
 .bg-london { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/london.jpg'); }
+                      url('./public/assets/images/london.jpg'); }
 .bg-dubai { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/dubai.jpg'); }
+                      url('./public/assets/images/dubai.jpg'); }
 .bg-canada { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/canda.jpg');}
+                      url('./public/assets/images/canda.jpg');}
 .bg-egypt { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/egypt.jpg'); }
+                      url('./public/assets/images/egypt.jpg'); }
 .bg-japan { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/japan.jpg'); }
+                      url('./public/assets/images/japan.jpg'); }
 .bg-brazil { background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/public/assets/images/brazil.avif'); }
+                      url('./public/assets/images/brazil.avif'); }
 /* end weather search */
 
 /* Start countriesweather */
