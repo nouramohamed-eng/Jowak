@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="videos.css">
-     <link
+    <link rel="stylesheet" href="contact.css">
+    <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
       rel="stylesheet"
     />
@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap"
       rel="stylesheet"
     />
-    <title>Videos</title>
+    <title>Contact</title>
 </head>
 <body>
     <main>
@@ -42,7 +42,7 @@
           <ul class="nav-links">
             <li><a href="home.html" class="active">Home</a></li>
             <li><a href="News.html">News</a></li>
-            <li><a href="maps.html">Map</a></li>
+            <li><a href="maps.html" class="active">Map</a></li>
             <li><a href="videos.html">Videos</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -89,22 +89,29 @@
       </nav>
       
     </main>
-<section class="clouds">
+    <section class="clouds">
          <div class="cloudsCont">
             <video autoplay muted loop playsinline class="video-bg">
                 <source src="./public/assets/videos/Recording 2026-08-10 195921.mp4"type="video/mp4">
             </video>
-            <h1>Global Weather Videos</h1>
+            <h1>Contact Us</h1>
          </div>
     </section>
-<section class="WeatherNews">
-    <div class="Cardscontainer bg-container">
-    </div>
-  </section>
-  <section class="ForecastVideos">
-        <div class="videosCard-container bg-container">
-          
+    <section class="contact form">
+      <div class="form bg-container">
+        <div class="nameMail">
+          <input type="text" placeholder="Name" class="nameInp">
+          <input type="email" placeholder="Email" class="emailInp">
         </div>
+        <div class="phoneSubject">
+          <input type="text" placeholder="Phone" class="PhoneInp">
+          <input type="text" placeholder="Subject" class="SubInp">
+        </div>
+        <div class="Description">
+          <textarea name="message" placeholder="Your Message" class="MessageInp"></textarea>
+        </div>
+        <button class="SendBtn" type="submit">Send</button>
+      </div>
     </section>
     <footer>
       <div class="footer-cotnainer bg-container">
@@ -132,7 +139,6 @@ information for users.</h4>
       </div>
     </footer>
 
-<script src="./js/data.js"></script>
-<script src="./js/videos.js" defer></script>
+    <script src="/js/contact.js"></script>
 </body>
 </html>
